@@ -27,11 +27,11 @@ function DashboardContent() {
         </TabsList>
         
         <TabsContent value="quick">
-          <QuickMode userId={user?.uid || ''} onGenerate={handleGenerate} />
+          <QuickMode userId={user?.uid || 'guest'} onGenerate={handleGenerate} />
         </TabsContent>
         
         <TabsContent value="pro">
-          <ProMode userId={user?.uid || ''} onGenerate={handleGenerate} />
+          <ProMode userId={user?.uid || 'guest'} onGenerate={handleGenerate} />
         </TabsContent>
       </Tabs>
     </div>
