@@ -245,3 +245,4 @@ For support, email support@promptiq.com or visit our documentation.
 ---
 
 **Built with ❤️ using Next.js, Firebase, and Gemini AI**
+# Fixed
