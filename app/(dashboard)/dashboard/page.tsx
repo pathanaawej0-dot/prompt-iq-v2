@@ -2,6 +2,7 @@
 
 import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
+import { useAuth } from '@/lib/firebase/AuthContext'
 import QuickMode from '@/components/dashboard/QuickMode'
 import ProMode from '@/components/dashboard/ProMode'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -9,6 +10,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 function DashboardContent() {
   const searchParams = useSearchParams()
   const mode = searchParams?.get('mode') || 'quick'
+  const { user } = useAuth()
+
+  const handleGenerate = (prompt: string) => {
+    console.log('Generated:', prompt)
+  }
 
   return (
     <div className="container mx-auto py-8">
@@ -21,11 +27,11 @@ function DashboardContent() {
         </TabsList>
         
         <TabsContent value="quick">
-          <QuickMode />
+          <QuickMode userId={user?.uid || ''} onGenerate={handleGenerate} />
         </TabsContent>
         
         <TabsContent value="pro">
-          <ProMode />
+          <ProMode userId={user?.uid || ''} onGenerate={handleGenerate} />
         </TabsContent>
       </Tabs>
     </div>
