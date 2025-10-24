@@ -198,3 +198,5 @@ export function ProMode({ userId, onGenerate }: ProModeProps) {
     </div>
   );
 }
+
+export default ProMode;

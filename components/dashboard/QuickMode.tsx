@@ -129,3 +129,5 @@ export function QuickMode({ userId, onGenerate }: QuickModeProps) {
     </div>
   );
 }
+
+export default QuickMode;
