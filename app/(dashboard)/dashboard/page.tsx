@@ -12,8 +12,8 @@ function DashboardContent() {
   const mode = searchParams?.get('mode') || 'quick'
   const { user } = useAuth()
 
-  const handleGenerate = (prompt: string) => {
-    console.log('Generated:', prompt)
+  const handleGenerate = async (prompt: string) => {
+    return { output: prompt }
   }
 
   return (
